@@ -1,0 +1,173 @@
+<html>
+<head>
+
+<title>Noziro Stats</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="title" content="Noziro Selfbot">
+<meta name="description" content="Noziro Selfbot Stats">
+<meta name="theme-color" content="#00D1B2" />
+<meta property="og:image" content="https://cdn.glitch.com/4b8aec9c-29c7-4306-91f0-537948de80ff%2FCopy%20of%20Noziro.png">
+
+<link rel="icon" type="image/png" href="https://cdn.glitch.com/4b8aec9c-29c7-4306-91f0-537948de80ff%2FCopy%20of%20Noziro.png" />
+
+<%- include("/app/public/ressources/style/index.ejs") %>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+
+	<style>
+	canvas{
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+	}
+	</style>
+</head>
+
+<body>
+
+	<div class="notification is-primary title is-3">
+  <u>Chart of the number of users per hour during the last 24 hours, refreshed every hour:</u>
+</div>
+
+	<div class="chart-container" style="position: relative; height:100%; width:100%">
+<canvas id="hourchart"></canvas>
+	</div>
+	<div class="notification is-primary is-medium">
+	Amount of users during the last hour:
+<span class="tag is-info is-large" id="hourcount"></span>
+
+	</div>
+
+
+
+	<div class="notification is-warning title is-3">
+	<u>Chart of the number of users per day during the last week, refreshed everyday:</u>
+</div>
+
+
+<div class="chart-container" style="position: relative; height:100%; width:100%">
+<canvas id="daychart"></canvas>
+</div>
+<div class="notification is-warning is-medium">
+Amount of users the last 24 hours:
+<span class="tag is-info is-large" id="count"></span>
+
+</div>
+
+<script>
+
+function genhourarray() {
+	let date_ob = new Date();
+
+	var final = [];
+	 i = 22
+	 j = i+1
+	while(i > -2) {
+
+		 first = date_ob.getHours()-j
+		 second = date_ob.getHours()-i
+		 if(first < 0){
+			 first = 24+first
+		 };
+		 if(second < 0){
+			second = 24+second
+		};
+		final.push(`${first}-${second}h`)
+		 i = i-1
+		 j = i+1
+	}
+	var array = final;
+	return array
+}
+
+function lastdaycount() {
+
+var array = [<%= data.array %>,<%= data.traffic %>]
+var total=0;
+for(var i in array) { total += array[i]; }
+return total
+
+
+}
+
+document.getElementById('count').innerHTML = lastdaycount();
+document.getElementById("hourcount").innerHTML = <%= data.traffic %>;
+console.log()
+var ctx = document.getElementById('hourchart');
+var hourchart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: genhourarray(),
+        datasets: [{
+
+            label: 'Users traffic every hour',
+            data: [<%= data.array %>,<%= data.traffic %>],
+            backgroundColor: "#a4f5e9",
+            borderColor: "#00D1B2",
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+							ticks: {
+						min: 0,
+
+						// forces step size to be 5 units
+						stepSize: 2
+					}
+            }]
+        }
+    }
+});
+
+
+//////////////////////////::
+
+
+
+var ctx2 = document.getElementById('daychart');
+var daychart = new Chart(ctx2, {
+    type: 'line',
+    data: {
+        labels: ["1","2","3","4","5","6","Today"],
+        datasets: [{
+
+            label: 'Users traffic every day',
+            data: [<%= data.day %>,lastdaycount()],
+            backgroundColor: "#ffdd57",
+            borderColor: "#e3b502",
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+							ticks: {
+						min: 0,
+
+						// forces step size to be 5 units
+						stepSize: 25
+					}
+            }]
+        }
+    }
+});
+</script>
+
+<footer class="footer">
+		<div class="content has-text-centered">
+				<p>
+						<strong>Made with ❤️ by</strong> <a href="https://twitter.com/saravenpi">Saravenpi</a> <br>The source code is licensed
+						<a href="https://opensource.org/licenses/mit-license.php">MIT</a>.
+						<br>The website content
+						is licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+				</p>
+			Join us on <a href="https://discord.gg/XfM8WR7">Discord</a> ;)
+		</div>
+</footer>
+</body>
+
+</html>
