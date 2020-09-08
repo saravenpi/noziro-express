@@ -1,6 +1,6 @@
 {
-  "name": "NoziStats",
-  "description": "noziro traffic analytics app",
+  "name": "Noziro",
+  "description": "The best discord selfbot",
   "success_url": "/",
   "keywords": [
     "node",

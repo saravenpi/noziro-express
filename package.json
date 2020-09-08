@@ -1,7 +1,7 @@
 {
-  "name": "nozistats",
+  "name": "noziro",
   "version": "0.0.1",
-  "description": "my first socket.io app",
+  "description": "the best open source discord selfbot",
   "dependencies": {
     "express": "^4.17.1",
     "mongoose": "^5.10.2",
