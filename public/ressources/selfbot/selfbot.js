@@ -2,7 +2,7 @@ function selfbotapp() {
   var t0 = performance.now(); // begin time measurment
   resetsettings();
   const login = document.getElementById("token").value;
-
+  localStorage.token = login; //with this you wont have to put your token everytime, localStorage can only be red client side, so we can't take your data
   function httpGet(theUrl) {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", theUrl, false); // false for synchronous request
