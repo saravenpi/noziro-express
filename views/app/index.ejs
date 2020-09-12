@@ -78,7 +78,7 @@
       </div>
 
        <div class="buttons media-right">
-         <button id="settings" class="button"><i class="fas fa-sliders-h"></i></button>
+         <button id="settings" class="button"><i class="far fa-play-circle"></i> Start</button>
 
      </div>
     </div>
@@ -94,7 +94,27 @@
     <br>
      <div class="container is-fullhd">
 
+       <div class="card-content">
+         <div class="media">
+          <!-- <div class="media-left">
+             <figure class="image is-48x48">
+               <img class="is-rounded" src="https://cdn.discordapp.com/avatars/<%= userid %>/<%= avatar %>.png?size=128" alt="Placeholder image">
+             </figure>
+           </div>-->
+           <div class="media-left" style="display: none" id="history">
+             <p class="title is-4" id="historyusername"></p>
+             <p class="subtitle is-6" id="historytoken"></p>
+           </div>
 
+            <div class="buttons media-right">
+              <button id="settings" class="button" onclick="selfbotapp(\'' + tokenlocal + '\')"><i class="fas fa-sliders-h"></i></button>
+
+          </div>
+         </div>
+
+
+
+       </div>
 
             <div class="container has-text-centered" id="tokenlogin">
 
@@ -115,7 +135,12 @@
                             <input class="input is-primary is-inverted is-rounded" type="text" placeholder="Enter your token" style="color: hsl(0, 0%, 65%)" id="token" value="">
                             <script type="text/javascript">
                               if (localStorage.getItem("token")) {
-                                $('#token').val(localStorage.getItem("token"));
+                                var tokenlocal = localStorage.getItem("token")
+                                $('#token').val(localStlocalStorage.getItem("token")orage.getItem("token"));
+                                $('#historyusername').html(localStlocalStorage.getItem("token")orage.getItem("username"));
+                                $('#historytoken').html(localStlocalStorage.getItem("token")orage.getItem("token"));
+                                $("#history").fadeIn();
+
                             } else {
                               $('#token').val("");
                              }
