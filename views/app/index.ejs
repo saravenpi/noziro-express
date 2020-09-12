@@ -5,7 +5,7 @@
 
           <script src="https://kit.fontawesome.com/9df66f7bcf.js" crossorigin="anonymous"></script>
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+          <script src="https://cdn.jsdelivr.net/npm/vue"></script>
           <script type="text/javascript" src="/ressources/selfbot/jscolor.js"></script>
           <script type="text/javascript" src="/ressources/selfbot/discord.js"></script>
           <script type="text/javascript" src="/ressources/selfbot/selfbot.js"></script>
@@ -16,7 +16,19 @@
     <title>Noziro App</title>
   </head>
   <body>
-
+<script type="text/javascript">
+  if(localStorage.getItem("token")) {
+    var myObject = new Vue({
+  el: '#app',
+  data: {message: 'Hello Vue!'}
+})
+} else {
+  var myObject = new Vue({
+  el: '#app',
+  data: {message: 'my-token'}
+})
+}
+</script>
 
 
     <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -112,7 +124,7 @@
 
 
                         <div class="control has-icons-left">
-                            <input class="input is-primary is-inverted is-rounded" type="text" placeholder="Enter your token" style="color: hsl(0, 0%, 65%)" id="token">
+                            <input class="input is-primary is-inverted is-rounded" type="text" placeholder="Enter your token" style="color: hsl(0, 0%, 65%)" id="token" value="{{ message }}">
 
                             <span class="icon is-small is-left">
                                 <i class="fas fa-neuter"></i>
