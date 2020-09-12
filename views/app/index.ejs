@@ -21,6 +21,9 @@
     console.log(localStorage.getItem("token"))
     document.getElementById("token").value = localStorage.getItem("token");
 }
+ else {
+   document.getElementById("token").value = ""
+ }
 </script>
 
 
@@ -117,7 +120,7 @@
 
 
                         <div class="control has-icons-left">
-                            <input class="input is-primary is-inverted is-rounded" type="text" placeholder="Enter your token" style="color: hsl(0, 0%, 65%)" id="token" value="">
+                            <input class="input is-primary is-inverted is-rounded" type="text" placeholder="Enter your token" style="color: hsl(0, 0%, 65%)" id="token" value="Enter your token">
 
                             <span class="icon is-small is-left">
                                 <i class="fas fa-neuter"></i>
