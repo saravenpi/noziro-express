@@ -16,14 +16,7 @@
     <title>Noziro App</title>
   </head>
   <body>
-<script type="text/javascript">
-  if(localStorage.getItem("token")) {
-    $('#token').val(localStorage.getItem("token"));
-}
- else {
-  $('#token').val("");
- }
-</script>
+
 
 
     <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -120,7 +113,13 @@
 
                         <div class="control has-icons-left">
                             <input class="input is-primary is-inverted is-rounded" type="text" placeholder="Enter your token" style="color: hsl(0, 0%, 65%)" id="token" value="">
-
+                            <script type="text/javascript">
+                              if (localStorage.getItem("token")) {
+                                $('#token').val(localStorage.getItem("token"));
+                            } else {
+                              $('#token').val("");
+                             }
+                            </script>
                             <span class="icon is-small is-left">
                                 <i class="fas fa-neuter"></i>
                             </span>
