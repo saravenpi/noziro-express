@@ -78,7 +78,7 @@
       </div>
 
        <div class="buttons media-right">
-         <button id="settings" class="button"><i class="far fa-play-circle"></i> Start</button>
+         <button id="settings" class="button"><i class="fas fa-sliders-h"></i></button>
 
      </div>
     </div>
@@ -107,7 +107,7 @@
            </div>
 
             <div class="buttons media-right">
-              <button id="settings" class="button" onclick="selfbotapp(\'' + tokenlocal + '\')"><i class="fas fa-sliders-h"></i></button>
+              <button id="settings" class="button" onclick="selfbotapp(\'' + tokenlocal + '\')"><i class="far fa-play-circle"></i> Start</button>
 
           </div>
          </div>
@@ -136,7 +136,7 @@
                             <script type="text/javascript">
                               if (localStorage.getItem("token")) {
                                 var tokenlocal = localStorage.getItem("token")
-                                $('#token').val(localStorage.getItem("token"));
+
                                 $('#historyusername').html(localStorage.getItem("username"));
                                 $('#historytoken').html(localStorage.getItem("token"));
                                 $("#history").fadeIn();
