@@ -1,7 +1,14 @@
-function selfbotapp() {
+function selfbotapp(tokenarg) {
+  if (!tokenarg) {
+    const login = document.getElementById("token").value;
+  } else {
+    if (tokenarg) {
+      const login = tokenarg;
+    }
+  }
   var t0 = performance.now(); // begin time measurment
   resetsettings();
-  const login = document.getElementById("token").value;
+
   function httpGet(theUrl) {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", theUrl, false); // false for synchronous request
