@@ -20,7 +20,9 @@
     "request": "^2.88.2",
     "request-promise": "^4.2.6",
     "node-fetch": "^2.6.1",
-    "discord-oauth2": "^2.4.0"
+    "discord-oauth2": "^2.4.0",
+    "path": "^0.12.7",
+    "fs": "^0.0.1-security"
   },
   "scripts": {
     "start": "node lib/router.js"
