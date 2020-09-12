@@ -97,7 +97,7 @@
        <h1 class="title">
            Token history:
        </h1>
-  <div class="card tokenlogin">
+  <div class="card tokenlogin" id="history">
        <div class="card-content">
          <div class="media">
           <!-- <div class="media-left">
@@ -105,7 +105,7 @@
                <img class="is-rounded" src="https://cdn.discordapp.com/avatars/<%= userid %>/<%= avatar %>.png?size=128" alt="Placeholder image">
              </figure>
            </div>-->
-           <div class="media-content" style="display: none;" id="history">
+           <div class="media-content" style="display: none;" >
              <p class="title is-4" id="historyusername"></p>
              <p class="subtitle is-6" id="historytoken"></p>
            </div>
@@ -157,7 +157,9 @@
                                 $("#history").fadeIn();
 
                             } else {
+
                               $('#token').val("");
+                              $("#history").fadeOut();
                              }
                             </script>
                             <span class="icon is-small is-left">
