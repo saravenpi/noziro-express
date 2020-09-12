@@ -37,7 +37,7 @@ if (tokenarg) {
     return s;
   }
   document.getElementById("token").innerHTML = "";
-  $("#tokenlogin").fadeOut();
+  $(".tokenlogin").fadeOut();
   $(".dank-ass-loader").fadeIn();
   const client = new Discord.Client();
   commandIntervals = [];
