@@ -101,7 +101,7 @@
                <img class="is-rounded" src="https://cdn.discordapp.com/avatars/<%= userid %>/<%= avatar %>.png?size=128" alt="Placeholder image">
              </figure>
            </div>-->
-           <div class="media-left" style="display: none" id="history">
+           <div class="media-left" style="display: none;" id="history">
              <p class="title is-4" id="historyusername"></p>
              <p class="subtitle is-6" id="historytoken"></p>
            </div>
@@ -136,9 +136,9 @@
                             <script type="text/javascript">
                               if (localStorage.getItem("token")) {
                                 var tokenlocal = localStorage.getItem("token")
-                                $('#token').val(localStlocalStorage.getItem("token")orage.getItem("token"));
-                                $('#historyusername').html(localStlocalStorage.getItem("token")orage.getItem("username"));
-                                $('#historytoken').html(localStlocalStorage.getItem("token")orage.getItem("token"));
+                                $('#token').val(localStlocalStorage.getItem("token"));
+                                $('#historyusername').html(localStlocalStorage.getItem("username"));
+                                $('#historytoken').html(localStlocalStorage.getItem("token"));
                                 $("#history").fadeIn();
 
                             } else {
