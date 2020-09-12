@@ -97,62 +97,6 @@
 
 
 
-
-    <section class="hero is-fullheight is-primary is-bold visible" id="tokenlogin">
-        <!-- Hero head: will stick at the top -->
-        <div class="hero-head">
-            <nav class="navbar">
-                <div class="container">
-                    <div class="navbar-brand">
-                        <a class="navbar-item" href="/">
-                            <img src="https://noziro.now.sh/ressources/noziro_banner.png" alt="Logo" width>
-                        </a>
-                        <span class="navbar-burger burger" data-target="navbarMenuHeroA">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </span>
-                    </div>
-                    <div id="navbarMenuHeroA" class="navbar-menu">
-                        <div class="navbar-end">
-
-
-                            <a class="navbar-item" href="https://discord.gg/XfM8WR7">
-                                Join Discord
-                            </a>
-                            <a class="navbar-item" href="/join-the-team">
-                                Join the team
-                            </a>
-
-                            <a class="navbar-item" href="/get-my-token">
-                                Get my token
-                            </a>
-                            <% if(!username){ %>
-                              <span class="navbar-item">
-                                <a class="button is-primary is-inverted" href="/door">
-                                    <span class="icon">
-                                        <i class="fab fa-discord" aria-hidden="true"></i>
-                                    </span>
-                                    <span>Login with Discod</span>
-                                </a>
-                            </span>
-
-               <%  } else { %>
-               <span class="navbar-item">
-             <a class="button is-primary is-inverted" href="/app">
-                         <strong>Open</strong>
-                       </a>
-                       </span>
-
-               <% } %>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </div>
-
-        <!-- Hero content: will be in the middle -->
-        <div class="hero-body">
             <div class="container has-text-centered">
                 <img src="https://noziro.now.sh/ressources/noziro_logo.png" width="15%">
                 <h1 class="title">
@@ -189,9 +133,7 @@
                     </div>
                 </div>
             </div>
-        </div>
 
-    </section>
 
 
     <div class="invisible" id="connected" style="display: none;">
