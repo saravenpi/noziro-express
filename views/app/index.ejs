@@ -92,6 +92,318 @@
 
     </div>
 
+
+
+
+
+
+    <section class="hero is-fullheight is-primary is-bold visible" id="tokenlogin">
+        <!-- Hero head: will stick at the top -->
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <a class="navbar-item" href="/">
+                            <img src="https://noziro.now.sh/ressources/noziro_banner.png" alt="Logo" width>
+                        </a>
+                        <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </div>
+                    <div id="navbarMenuHeroA" class="navbar-menu">
+                        <div class="navbar-end">
+
+
+                            <a class="navbar-item" href="https://discord.gg/XfM8WR7">
+                                Join Discord
+                            </a>
+                            <a class="navbar-item" href="/join-the-team">
+                                Join the team
+                            </a>
+
+                            <a class="navbar-item" href="/get-my-token">
+                                Get my token
+                            </a>
+                            <% if(!username){ %>
+                              <span class="navbar-item">
+                                <a class="button is-primary is-inverted" href="/door">
+                                    <span class="icon">
+                                        <i class="fab fa-discord" aria-hidden="true"></i>
+                                    </span>
+                                    <span>Login with Discod</span>
+                                </a>
+                            </span>
+
+               <%  } else { %>
+               <span class="navbar-item">
+             <a class="button is-primary is-inverted" href="/app">
+                         <strong>Open</strong>
+                       </a>
+                       </span>
+
+               <% } %>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Hero content: will be in the middle -->
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <img src="https://noziro.now.sh/ressources/noziro_logo.png" width="15%">
+                <h1 class="title">
+                    Token login
+                </h1>
+
+                <br>
+                </br>
+                <div class="field">
+                    <div class="control">
+
+
+
+                        <div class="control has-icons-left">
+                            <input class="input is-primary is-inverted is-rounded" type="text" placeholder="Enter your token" style="color: hsl(0, 0%, 65%)" id="token">
+
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-neuter"></i>
+                            </span>
+                        </div>
+                        <br><br />
+
+                        <span class="is-centered">
+
+                            <button class="button is-primary is-inverted is-centered" onclick="selfbotapp();" class="loginbtn">
+                                <span class="icon">
+                                    <i class="far fa-play-circle"></i>
+                                </span>
+                                <span>Start</span>
+                            </button>
+                        </span>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <div class="invisible" id="connected" style="display: none;">
+        <button onclick="logout();" class="button is-danger">Logout</button>
+
+        <h1>
+            <center>Connected as: <p id="username"></p>
+            </center>
+        </h1>
+
+
+        <p>
+            <h2>Control panel:</h2>
+        </p>
+        <div class="grid-container">
+
+            <div class="grid-item">
+                Embed Image:<br><input type="text" id="iembedimage" value="https://cdn.dribbble.com/users/1208648/screenshots/4017087/3greengif.gif">
+                <br>
+                <br>
+                <img id="prembedimage" class="grid-img" src="https://cdn.dribbble.com/users/1208648/screenshots/4017087/3greengif.gif" width="100px">
+            </div>
+
+            <div class="grid-item">
+                Footer Image:<br><input type="text" id="ifooterimage" value="https://noziro.now.sh/ressources/logo.png">
+                <br>
+                <br>
+                <img id="prfooterimage" class="grid-img" src="https://noziro.now.sh/ressources/logo.png" width="100px">
+            </div>
+
+            <div class="grid-item">
+                Embed Color:<br><input id="iembedcolor" class="jscolor" value="654321">
+            </div>
+            <div class="grid-item">
+                Prefix:<br>
+                <select class="selectmenu" id="iprefix">
+                    <option value="/" class="option">/</option>
+                    <option value="*" class="option">*</option>
+                    <option value=">" class="option">></option>
+                    <option value="<" class="option"><</option>
+                    <option value="." class="option">.</option>
+                    <option value="$" class="option">$</option>
+                    <option value="!" class="option">!</option>
+                    <option value=";" class="option">;</option>
+                    <option value="," class="option">,</option>
+                    <option value=":" class="option">:</option>
+
+                    <option value="_" class="option">_</option>
+                    <option value="-" class="option">-</option>
+                </select>
+            </div>
+            <div class="grid-item">
+                Afk Mode:
+                <br><label class="switch">
+                    <input type="checkbox" id="iafkmode" checked="false">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div class="grid-item">
+                Afk Message:<br><input type="text" id="iafkmessage" value="Sorry, je suis afk">
+            </div>
+            <div class="grid-item">
+              Logs Channel's Id:<br><input type="text" id="iafktransmitchannel" value="681305768426995719">
+            </div>
+
+            <div class="grid-item">
+                Custom Status:
+
+                <br><label class="switch">
+                    <input type="checkbox" id="iactivitystatus" checked="false">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <div class="grid-item">
+                Status Message:<br><select class="selectmenu" id="istatustype">
+                    <option value="STREAMING" class="option">Streaming</option>
+                    <option value="WATCHING" class="option">Watching</option>
+                    <option value="LISTENING" class="option">Listening</option>
+                    <option value="PLAYING" class="option">Playing</option>
+                </select>
+                <input type="text" id="istatusmessage" value="Noziro Selfbot">
+            </div>
+
+
+
+            <div class="grid-item">
+                Bot DMs (AdBlock):
+                <br><label class="switch">
+                    <input type="checkbox" id="iabstatus" checked="false">
+                    <span class="slider round"></span>
+                </label>
+
+
+            </div>
+
+            <div class="grid-item">
+                Nitro Sniper (autoclaimer):
+                <br><label class="switch">
+                    <input type="checkbox" id="insstatus" checked="false">
+                    <span class="slider round"></span>
+                </label>
+
+
+            </div>
+
+
+        </div>
+
+        <br>
+        <br>
+
+        <div id="snackbartwo">Default settings applied!</div>
+
+        <button onclick="resetsettings();" class="button is-info">Default Settings</button>
+    <br>
+    </div>
+
+    <div class="invisible" style="display:none">
+        <p id="prefix">/</p>
+        <p id="embedcolor">#654321</p>
+        <p id="embedimage">https://noziro.now.sh/ressources/noziro_gif.gif</p>
+        <p id="afktransmitchannel">681305768426995719</p>
+        <p id="footerimage">https://noziro.now.sh/ressources/noziro_brown.png</p>
+        <p id="afkmode">false</p>
+        <p id="afkmessage">Sorry dude, i'm afk</p>
+        <p id="statusmessage">Noziro Selfbot</p>
+        <p id="activitystatus">false</p>
+        <p id="statustype">STREAMING</p>
+        <p id="abstatus">false</p>
+        <p id="nsstatus">false</p>
+    </div>
+
+
+    <div class="invisible" style="display:none">
+        <p id="dprefix">/</p>
+        <p id="dembedcolor">#654321</p>
+        <p id="dembedimage">https://noziro.now.sh/ressources/noziro_gif.gif</p>
+        <p id="dafktransmitchannel">681305768426995719</p>
+        <p id="dfooterimage">https://noziro.now.sh/ressources/noziro_brown.png</p>
+        <p id="dafkmode">false</p>
+        <p id="dafkmessage">Sorry dude, i'm afk</p>
+        <p id="dstatusmessage">Noziro Selfbot</p>
+        <p id="dactivitystatus">false</p>
+        <p id="dstatustype">STREAMING</p>
+        <p id="dabstatus">false</p>
+        <p id="dnsstatus">false</p>
+
+
+        <p id="selfboton">false</p>
+    </div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Made with 🤎️ by</strong> <a href="https://twitter.com/saravenpi">Saravenpi</a> <br>The source code is licensed
+                <a href="https://opensource.org/licenses/mit-license.php">MIT</a>.
+                <br>The website content
+                is licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+            </p>
+          Join us on <a href="https://discord.gg/XfM8WR7">Discord</a> ;)
+        </div>
+    </footer>
+    <script type="text/javascript" src="/ressources/selfbot/jscolor.js"></script>
+    <script type="text/javascript" src="/ressources/selfbot/discord.js"></script>
+    <script type="text/javascript" src="/ressources/selfbot/selfbot.js"></script>
+
+
+
+    <div class="dank-ass-loader invisible centromax" id="loader" style="display:none">
+        <div class="row">
+            <div class="arrow up outer outer-18"></div>
+            <div class="arrow down outer outer-17"></div>
+            <div class="arrow up outer outer-16"></div>
+            <div class="arrow down outer outer-15"></div>
+            <div class="arrow up outer outer-14"></div>
+        </div>
+        <div class="row">
+            <div class="arrow up outer outer-1"></div>
+            <div class="arrow down outer outer-2"></div>
+            <div class="arrow up inner inner-6"></div>
+            <div class="arrow down inner inner-5"></div>
+            <div class="arrow up inner inner-4"></div>
+            <div class="arrow down outer outer-13"></div>
+            <div class="arrow up outer outer-12"></div>
+        </div>
+        <div class="row">
+            <div class="arrow down outer outer-3"></div>
+            <div class="arrow up outer outer-4"></div>
+            <div class="arrow down inner inner-1"></div>
+            <div class="arrow up inner inner-2"></div>
+            <div class="arrow down inner inner-3"></div>
+            <div class="arrow up outer outer-11"></div>
+            <div class="arrow down outer outer-10"></div>
+        </div>
+        <div class="row">
+            <div class="arrow down outer outer-5"></div>
+            <div class="arrow up outer outer-6"></div>
+            <div class="arrow down outer outer-7"></div>
+            <div class="arrow up outer outer-8"></div>
+            <div class="arrow down outer outer-9"></div>
+        </div>
     </div>
     </main>
 
