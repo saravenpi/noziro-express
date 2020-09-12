@@ -80,14 +80,24 @@
                             <a class="navbar-item" href="/get-my-token">
                                 Get my token
                             </a>
-                            <span class="navbar-item">
-                                <a class="button is-primary is-inverted" href="/selfbot">
+                            <% if(!username){ %>
+                              <span class="navbar-item">
+                                <a class="button is-primary is-inverted" href="/door">
                                     <span class="icon">
-                                        <i class="fab fa-discord"></i>
+                                        <i class="fab fa-discord" aria-hidden="true"></i>
                                     </span>
-                                    <span>Selfbot</span>
+                                    <span>Login with Discod</span>
                                 </a>
                             </span>
+
+               <%  } else { %>
+               <span class="navbar-item">
+             <a class="button is-primary is-inverted" href="/app">
+                         <strong>Open</strong>
+                       </a>
+                       </span>
+
+               <% } %>
                         </div>
                     </div>
                 </div>
