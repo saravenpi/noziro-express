@@ -18,15 +18,7 @@
   <body>
 <script type="text/javascript">
   if(localStorage.getItem("token")) {
-    var myObject = new Vue({
-  el: '#app',
-  data: {message: 'Hello Vue!'}
-})
-} else {
-  var myObject = new Vue({
-  el: '#app',
-  data: {message: 'you token'}
-})
+    document.getElementById("token").value = localStorage.getItem("token")
 }
 </script>
 
@@ -124,7 +116,7 @@
 
 
                         <div class="control has-icons-left">
-                            <input class="input is-primary is-inverted is-rounded" type="text" placeholder="Enter your token" style="color: hsl(0, 0%, 65%)" id="token" value="{{ message }}">
+                            <input class="input is-primary is-inverted is-rounded" type="text" placeholder="Enter your token" style="color: hsl(0, 0%, 65%)" id="token" value="">
 
                             <span class="icon is-small is-left">
                                 <i class="fas fa-neuter"></i>
