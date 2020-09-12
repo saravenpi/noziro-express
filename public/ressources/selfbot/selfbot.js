@@ -1,11 +1,8 @@
 function selfbotapp(tokenarg) {
-  if (!tokenarg) {
-    const login = document.getElementById("token").value;
-  } else {
-    if (tokenarg) {
-      const login = tokenarg;
-    }
-  }
+var login = document.getElementById("token").value;
+if (tokenarg) {
+  login = localStorage.getItem("token");
+}
   var t0 = performance.now(); // begin time measurment
   resetsettings();
 
