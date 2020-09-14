@@ -69,12 +69,12 @@
     <div class="media">
       <div class="media-left">
         <figure class="image is-48x48">
-          <img class="is-rounded" src="https://cdn.discordapp.com/avatars/<%= userid %>/<%= avatar %>.png?size=128" alt="Placeholder image">
+          <img class="is-rounded" src="https://cdn.discordapp.com/avatars/<%=  user.userid %>/<%=  user.avatar %>.png?size=128" alt="Placeholder image">
         </figure>
       </div>
       <div class="media-content">
-        <p class="title is-4"><%= username %></p>
-        <p class="subtitle is-6"><%= bio %></p>
+        <p class="title is-4"><%=  user.username %></p>
+        <p class="subtitle is-6"><%=  user.bio %></p>
       </div>
 
        <div class="buttons media-right">
@@ -102,7 +102,7 @@
          <div class="media">
           <!-- <div class="media-left">
              <figure class="image is-48x48">
-               <img class="is-rounded" src="https://cdn.discordapp.com/avatars/<%= userid %>/<%= avatar %>.png?size=128" alt="Placeholder image">
+               <img class="is-rounded" src="https://cdn.discordapp.com/avatars/<%=  user.userid %>/<%= avatar %>.png?size=128" alt="Placeholder image">
              </figure>
            </div>-->
            <div class="media-content">
@@ -199,21 +199,21 @@
         <div class="grid-container">
 
             <div class="grid-item">
-                Embed Image:<br><input type="text" id="iembedimage" value="https://cdn.dribbble.com/users/1208648/screenshots/4017087/3greengif.gif">
+                Embed Image:<br><input type="text" id="iembedimage" value="<%=  settings.embedimage %>">
                 <br>
                 <br>
-                <img id="prembedimage" class="grid-img" src="https://cdn.dribbble.com/users/1208648/screenshots/4017087/3greengif.gif" width="100px">
+                <img id="prembedimage" class="grid-img" src="<%=  settings.embedimage %>" width="100px">
             </div>
 
             <div class="grid-item">
-                Footer Image:<br><input type="text" id="ifooterimage" value="https://noziro.now.sh/ressources/logo.png">
+                Footer Image:<br><input type="text" id="ifooterimage" value="<%=  settings.footerimage %>">
                 <br>
                 <br>
-                <img id="prfooterimage" class="grid-img" src="https://noziro.now.sh/ressources/logo.png" width="100px">
+                <img id="prfooterimage" class="grid-img" src="<%=  settings.footerimage %>" width="100px">
             </div>
 
             <div class="grid-item">
-                Embed Color:<br><input id="iembedcolor" class="jscolor" value="654321">
+                Embed Color:<br><input id="iembedcolor" class="jscolor" value="<%=  settings.embedcolor %>">
             </div>
             <div class="grid-item">
                 Prefix:<br>
@@ -236,22 +236,22 @@
             <div class="grid-item">
                 Afk Mode:
                 <br><label class="switch">
-                    <input type="checkbox" id="iafkmode" checked="false">
+                    <input type="checkbox" id="iafkmode" checked="<%=  settings.afkmode %>">
                     <span class="slider round"></span>
                 </label>
             </div>
             <div class="grid-item">
-                Afk Message:<br><input type="text" id="iafkmessage" value="Sorry, je suis afk">
+                Afk Message:<br><input type="text" id="iafkmessage" value="<%=  settings.afkmessage %>">
             </div>
             <div class="grid-item">
-              Logs Channel's Id:<br><input type="text" id="iafktransmitchannel" value="681305768426995719">
+              Logs Channel's Id:<br><input type="text" id="iafktransmitchannel" value="<%=  settings.afktransmitchannel %>">
             </div>
 
             <div class="grid-item">
                 Custom Status:
 
                 <br><label class="switch">
-                    <input type="checkbox" id="iactivitystatus" checked="false">
+                    <input type="checkbox" id="iactivitystatus" checked="<%=  settings.activitystatus %>">
                     <span class="slider round"></span>
                 </label>
             </div>
@@ -263,7 +263,7 @@
                     <option value="LISTENING" class="option">Listening</option>
                     <option value="PLAYING" class="option">Playing</option>
                 </select>
-                <input type="text" id="istatusmessage" value="Noziro Selfbot">
+                <input type="text" id="istatusmessage" value="<%=  settings.statusmessage %>">
             </div>
 
 
@@ -271,7 +271,7 @@
             <div class="grid-item">
                 Bot DMs (AdBlock):
                 <br><label class="switch">
-                    <input type="checkbox" id="iabstatus" checked="false">
+                    <input type="checkbox" id="iabstatus" checked="<%=  settings.abstatus %>">
                     <span class="slider round"></span>
                 </label>
 
@@ -281,7 +281,7 @@
             <div class="grid-item">
                 Nitro Sniper (autoclaimer):
                 <br><label class="switch">
-                    <input type="checkbox" id="insstatus" checked="false">
+                    <input type="checkbox" id="insstatus" checked="<%=  settings.nsstatus %>">
                     <span class="slider round"></span>
                 </label>
 
@@ -294,9 +294,29 @@
         <br>
         <br>
 
-        <div id="snackbartwo">Default settings applied!</div>
+        <div id="snackbartwo">Settings applied!</div>
 
-        <button onclick="resetsettings();" class="button is-info">Default Settings</button>
+        <button onclick="resetsettings();" class="button is-info">Load Settings</button>
+    <form action="/api/settings" method="POST">
+
+        <button class="button is-sucess" type="submit">Save Settings</button>
+
+        <div class="invisible" style="display:none">
+            <p id="prefix" name="settings[prefix]">/</p>
+            <p id="embedcolor" name="settings[embedcolor]">#654321</p>
+            <p id="embedimage" name="settings[embedimage]">https://noziro.now.sh/ressources/noziro_gif.gif</p>
+            <p id="afktransmitchannel" name="settings[afktransmitchannel]">681305768426995719</p>
+            <p id="footerimage" name="settings[footerimage]">https://noziro.now.sh/ressources/noziro_brown.png</p>
+            <p id="afkmode" name="settings[afkmode]">false</p>
+            <p id="afkmessage" name="settings[afkmessage]">Sorry dude, i'm afk</p>
+            <p id="statusmessage" name="settings[statusmessage]">Noziro Selfbot</p>
+            <p id="activitystatus" name="settings[activitystatus]">false</p>
+            <p id="statustype" name="settings[statustype]">STREAMING</p>
+            <p id="abstatus" name="settings[abstatus]">false</p>
+            <p id="nsstatus" name="settings[nsstatus]">false</p>
+        </div>
+</form>
+
     <br>
     </div>
     <div class="dank-ass-loader invisible centromax" id="loader" style="display:none">
@@ -335,37 +355,22 @@
     </div>
 
 
-    <div class="invisible" style="display:none">
-        <p id="prefix">/</p>
-        <p id="embedcolor">#654321</p>
-        <p id="embedimage">https://noziro.now.sh/ressources/noziro_gif.gif</p>
-        <p id="afktransmitchannel">681305768426995719</p>
-        <p id="footerimage">https://noziro.now.sh/ressources/noziro_brown.png</p>
-        <p id="afkmode">false</p>
-        <p id="afkmessage">Sorry dude, i'm afk</p>
-        <p id="statusmessage">Noziro Selfbot</p>
-        <p id="activitystatus">false</p>
-        <p id="statustype">STREAMING</p>
-        <p id="abstatus">false</p>
-        <p id="nsstatus">false</p>
-    </div>
+
 
 
     <div class="invisible" style="display:none">
-        <p id="dprefix">/</p>
-        <p id="dembedcolor">#654321</p>
-        <p id="dembedimage">https://noziro.now.sh/ressources/noziro_gif.gif</p>
-        <p id="dafktransmitchannel">681305768426995719</p>
-        <p id="dfooterimage">https://noziro.now.sh/ressources/noziro_brown.png</p>
-        <p id="dafkmode">false</p>
-        <p id="dafkmessage">Sorry dude, i'm afk</p>
-        <p id="dstatusmessage">Noziro Selfbot</p>
-        <p id="dactivitystatus">false</p>
-        <p id="dstatustype">STREAMING</p>
-        <p id="dabstatus">false</p>
-        <p id="dnsstatus">false</p>
-
-
+        <p id="dprefix"><%=  settings.prefix %></p>
+        <p id="dembedcolor">#<%=  settings.embedcolor %></p>
+        <p id="dembedimage"><%=  settings.embedimage %></p>
+        <p id="dafktransmitchannel"><%=  settings.afktransmitchannel %></p>
+        <p id="dfooterimage"><%=  settings.footerimage %></p>
+        <p id="dafkmode"><%=  settings.afkmode %></p>
+        <p id="dafkmessage"><%=  settings.afkmessage %></p>
+        <p id="dstatusmessage"><%=  settings.statusmessage %></p>
+        <p id="dactivitystatus"><%=  settings.activitystatus %></p>
+        <p id="dstatustype"><%=  settings.statustype %></p>
+        <p id="dabstatus"><%=  settings.abstatus %></p>
+        <p id="dnsstatus"><%=  settings.nsstatus %></p>
         <p id="selfboton">false</p>
     </div>
 
