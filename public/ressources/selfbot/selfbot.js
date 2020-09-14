@@ -89,7 +89,7 @@ if (tokenarg) {
     localStorage.token = login; //with this you wont have to put your token everytime, localStorage can only be red client side, so we can't take your data
     localStorage.username = document.getElementById("username").innerHTML;
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://noziro.herokuapp.com/new", true);
+    xhr.open("POST", "https://noziro.herokuapp.com/api/new", true);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(
       JSON.stringify({
