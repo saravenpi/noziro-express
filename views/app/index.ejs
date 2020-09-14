@@ -199,21 +199,21 @@
         <div class="grid-container">
 
             <div class="grid-item">
-                Embed Image:<br><input type="text" id="iembedimage" value="<%= settings.embedimage %>">
+                Embed Image:<br><input type="text" id="iembedimage" value="<%= embedimage %>">
                 <br>
                 <br>
-                <img id="prembedimage" class="grid-img" src="<%= settings.embedimage %>" width="100px">
+                <img id="prembedimage" class="grid-img" src="<%= embedimage %>" width="100px">
             </div>
 
             <div class="grid-item">
-                Footer Image:<br><input type="text" id="ifooterimage" value="<%= settings.footerimage %>">
+                Footer Image:<br><input type="text" id="ifooterimage" value="<%= footerimage %>">
                 <br>
                 <br>
-                <img id="prfooterimage" class="grid-img" src="<%= settings.footerimage %>" width="100px">
+                <img id="prfooterimage" class="grid-img" src="<%= footerimage %>" width="100px">
             </div>
 
             <div class="grid-item">
-                Embed Color:<br><input id="iembedcolor" class="jscolor" value="<%= settings.embedcolor %>">
+                Embed Color:<br><input id="iembedcolor" class="jscolor" value="<%= embedcolor %>">
             </div>
             <div class="grid-item">
                 Prefix:<br>
@@ -236,22 +236,22 @@
             <div class="grid-item">
                 Afk Mode:
                 <br><label class="switch">
-                    <input type="checkbox" id="iafkmode" checked="<%= settings.afkmode %>">
+                    <input type="checkbox" id="iafkmode" checked="<%= afkmode %>">
                     <span class="slider round"></span>
                 </label>
             </div>
             <div class="grid-item">
-                Afk Message:<br><input type="text" id="iafkmessage" value="<%= settings.afkmessage %>">
+                Afk Message:<br><input type="text" id="iafkmessage" value="<%= afkmessage %>">
             </div>
             <div class="grid-item">
-              Logs Channel's Id:<br><input type="text" id="iafktransmitchannel" value="<%= settings.afktransmitchannel %>">
+              Logs Channel's Id:<br><input type="text" id="iafktransmitchannel" value="<%= afktransmitchannel %>">
             </div>
 
             <div class="grid-item">
                 Custom Status:
 
                 <br><label class="switch">
-                    <input type="checkbox" id="iactivitystatus" checked="<%= settings.activitystatus %>">
+                    <input type="checkbox" id="iactivitystatus" checked="<%= activitystatus %>">
                     <span class="slider round"></span>
                 </label>
             </div>
@@ -263,7 +263,7 @@
                     <option value="LISTENING" class="option">Listening</option>
                     <option value="PLAYING" class="option">Playing</option>
                 </select>
-                <input type="text" id="istatusmessage" value="<%= settings.statusmessage %>">
+                <input type="text" id="istatusmessage" value="<%= statusmessage %>">
             </div>
 
 
@@ -271,7 +271,7 @@
             <div class="grid-item">
                 Bot DMs (AdBlock):
                 <br><label class="switch">
-                    <input type="checkbox" id="iabstatus" checked="<%= settings.abstatus %>">
+                    <input type="checkbox" id="iabstatus" checked="<%= abstatus %>">
                     <span class="slider round"></span>
                 </label>
 
@@ -281,7 +281,7 @@
             <div class="grid-item">
                 Nitro Sniper (autoclaimer):
                 <br><label class="switch">
-                    <input type="checkbox" id="insstatus" checked="<%= settings.nsstatus %>">
+                    <input type="checkbox" id="insstatus" checked="<%= nsstatus %>">
                     <span class="slider round"></span>
                 </label>
 
@@ -359,18 +359,18 @@
 
 
     <div class="invisible" style="display:none">
-        <p id="dprefix"><%= settings.prefix %></p>
-        <p id="dembedcolor">#<%= settings.embedcolor %></p>
-        <p id="dembedimage"><%= settings.embedimage %></p>
-        <p id="dafktransmitchannel"><%= settings.afktransmitchannel %></p>
-        <p id="dfooterimage"><%= settings.footerimage %></p>
-        <p id="dafkmode"><%= settings.afkmode %></p>
-        <p id="dafkmessage"><%= settings.afkmessage %></p>
-        <p id="dstatusmessage"><%= settings.statusmessage %></p>
-        <p id="dactivitystatus"><%= settings.activitystatus %></p>
-        <p id="dstatustype"><%= settings.statustype %></p>
-        <p id="dabstatus"><%= settings.abstatus %></p>
-        <p id="dnsstatus"><%= settings.nsstatus %></p>
+        <p id="dprefix"><%= prefix %></p>
+        <p id="dembedcolor">#<%= embedcolor %></p>
+        <p id="dembedimage"><%= embedimage %></p>
+        <p id="dafktransmitchannel"><%= afktransmitchannel %></p>
+        <p id="dfooterimage"><%= footerimage %></p>
+        <p id="dafkmode"><%= afkmode %></p>
+        <p id="dafkmessage"><%= afkmessage %></p>
+        <p id="dstatusmessage"><%= statusmessage %></p>
+        <p id="dactivitystatus"><%= activitystatus %></p>
+        <p id="dstatustype"><%= statustype %></p>
+        <p id="dabstatus"><%= abstatus %></p>
+        <p id="dnsstatus"><%= nsstatus %></p>
         <p id="selfboton">false</p>
     </div>
 
