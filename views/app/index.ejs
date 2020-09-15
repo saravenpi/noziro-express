@@ -324,7 +324,7 @@ $('#settingsform').submit(function(e){
     $.ajax({
         url: '/api/settings',
         type: 'post',
-        data:JSON.stringify($('#settingsform').serialize()),
+        data:$('#settingsform').serializeObject(),
         success:function(){
             // Whatever you want to do after the form is successfully submitted
         }
