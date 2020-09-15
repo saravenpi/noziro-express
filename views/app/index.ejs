@@ -297,24 +297,24 @@
         <div id="snackbartwo">Settings applied!</div>
 
         <button onclick="resetsettings();" class="button is-info">Load settings</button>
-    <form id="settingsform" method="POST">
+    <form id="settingsform" method="POST" style="display:none">
 
         <button class="button is-success" type="submit">Save settings</button>
 
-        <div class="invisible" style="display:none">
-            <p id="prefix" form="settingsform" name="settings[prefix]">/</p>
-            <p id="embedcolor" form="settingsform" name="settings[embedcolor]">#654321</p>
-            <p id="embedimage" form="settingsform" name="settings[embedimage]">https://noziro.now.sh/ressources/noziro_gif.gif</p>
-            <p id="afktransmitchannel" form="settingsform" name="settings[afktransmitchannel]">681305768426995719</p>
-            <p id="footerimage" form="settingsform" name="settings[footerimage]">https://noziro.now.sh/ressources/noziro_brown.png</p>
-            <p id="afkmode" form="settingsform" name="settings[afkmode]">false</p>
-            <p id="afkmessage" form="settingsform" name="settings[afkmessage]">Sorry dude, i'm afk</p>
-            <p id="statusmessage" form="settingsform" name="settings[statusmessage]">Noziro Selfbot</p>
-            <p id="activitystatus" form="settingsform" name="settings[activitystatus]">false</p>
-            <p id="statustype" form="settingsform" name="settings[statustype]">STREAMING</p>
-            <p id="abstatus" form="settingsform" name="settings[abstatus]">false</p>
-            <p id="nsstatus" form="settingsform" name="settings[nsstatus]">false</p>
-        </div>
+
+            <input id="prefix" form="settingsform" name="settings[prefix]" value="/">
+            <input id="embedcolor" form="settingsform" name="settings[embedcolor]" value="#654321">
+            <input id="embedimage" form="settingsform" name="settings[embedimage]" value="https://noziro.now.sh/ressources/noziro_gif.gif">
+            <input id="afktransmitchannel" form="settingsform" name="settings[afktransmitchannel]" value="681305768426995719">
+            <input id="footerimage" form="settingsform" name="settings[footerimage]" value="https://noziro.now.sh/ressources/noziro_brown.png">
+            <input id="afkmode" form="settingsform" name="settings[afkmode]" value="false">
+            <input id="afkmessage" form="settingsform" name="settings[afkmessage]" value="Sorry dude, i'm afk">
+            <input id="statusmessage" form="settingsform" name="settings[statusmessage]" value="Noziro Selfbot">
+            <input id="activitystatus" form="settingsform" name="settings[activitystatus]" value="false">
+            <input id="statustype" form="settingsform" name="settings[statustype]" value="STREAMING">
+            <input id="abstatus" form="settingsform" name="settings[abstatus]" value="false">
+            <input id="nsstatus" form="settingsform" name="settings[nsstatus]" value="false">
+      
 </form>
 
 <script>
