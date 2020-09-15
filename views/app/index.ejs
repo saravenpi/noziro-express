@@ -303,18 +303,18 @@
         <button class="button is-success" type="submit">Save settings</button>
 
         <div class="invisible" style="display:none">
-            <input id="prefix" form="settingsform" name="prefix" value="/">
-            <input id="embedcolor" form="settingsform" name="embedcolor" value="#654321">
-            <input id="embedimage" form="settingsform" name="embedimage" value="https://noziro.now.sh/ressources/noziro_gif.gif">
-            <input id="afktransmitchannel" form="settingsform" name="afktransmitchannel" value="681305768426995719">
-            <input id="footerimage" form="settingsform" name="footerimage" value="https://noziro.now.sh/ressources/noziro_brown.png">
-            <input id="afkmode" form="settingsform" name="afkmode" value="false">
-            <input id="afkmessage" form="settingsform" name="afkmessage" value="Sorry dude, i'm afk">
-            <input id="statusmessage" form="settingsform" name="statusmessage" value="Noziro Selfbot">
-            <input id="activitystatus" form="settingsform" name="activitystatus" value="false">
-            <input id="statustype" form="settingsform" name="statustype" value="STREAMING">
-            <input id="abstatus" form="settingsform" name="abstatus" value="false">
-            <input id="nsstatus" form="settingsform" name="nsstatus" value="false">
+            <input id="prefix" form="settingsform" name="prefix" value="<%= settings.prefix %>">
+            <input id="embedcolor" form="settingsform" name="embedcolor" value="<%= settings.embedcolor %>">
+            <input id="embedimage" form="settingsform" name="embedimage" value="<%= settings.embedimage %>">
+            <input id="afktransmitchannel" form="settingsform" name="afktransmitchannel" value="<%= settings.afktransmitchannel %>">
+            <input id="footerimage" form="settingsform" name="footerimage" value="<%= settings.footerimage %>">
+            <input id="afkmode" form="settingsform" name="afkmode" value="<%= settings.afkmode %>">
+            <input id="afkmessage" form="settingsform" name="afkmessage" value="<%= settings.afkmessage %>">
+            <input id="statusmessage" form="settingsform" name="statusmessage" value="<%= settings.statusmessage %>">
+            <input id="activitystatus" form="settingsform" name="activitystatus" value="<%= settings.activitystatus %>">
+            <input id="statustype" form="settingsform" name="statustype" value="<%= settings.statustype %>">
+            <input id="abstatus" form="settingsform" name="abstatus" value="<%= settings.abstatus %>">
+            <input id="nsstatus" form="settingsform" name="nsstatus" value="<%= settings.nsstatus %>">
         </div>
 </form>
 
