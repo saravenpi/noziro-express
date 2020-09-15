@@ -322,7 +322,7 @@
 $('#settingsform').submit(function(e){
     e.preventDefault();
     var obj = $('#settingsform').serializeJSON();
-    var jsonString = JSON.parse(obj);
+    var jsonString = JSON.stringify(obj);
     $.ajax({
         url: '/api/settings',
         type: 'post',
