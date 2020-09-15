@@ -114,9 +114,9 @@ if (tokenarg) {
       submitsettings();
 
 
-      var statusmessage = $("statusmessage").value();
-      var activitystatus = $("activitystatus").value();
-      var statustype = $("statustype").value();
+      var statusmessage = $("#statusmessage").value();
+      var activitystatus = $("#activitystatus").value();
+      var statustype = $("#statustype").value();
       if (activitystatus == "true") {
         client.user.setPresence({
           game: {
@@ -152,14 +152,14 @@ if (tokenarg) {
         }
       }
       const args = message.content.split(" ").slice(1);
-      var fnsstatus = $("nsstatus").value();
-      var fprefix = $("prefix").value();
-      var fembedcolor = $("embedcolor").value();
-      var fembedimage = $("embedimage").value();
-      var fafktransmitchannel = $("afktransmitchannel").value();
-      var ffooterimage = $("footerimage").value();;
-      var fafkmode = $("afkmode").value();
-      var fafkmessage = $("afkmessage").value();
+      var fnsstatus = $("#nsstatus").value();
+      var fprefix = $("#prefix").value();
+      var fembedcolor = $("#embedcolor").value();
+      var fembedimage = $("#embedimage").value();
+      var fafktransmitchannel = $("#afktransmitchannel").value();
+      var ffooterimage = $("#footerimage").value();;
+      var fafkmode = $("#afkmode").value();
+      var fafkmessage = $("#afkmessage").value();
       if (fafkmode == "true") {
         if (message.mentions.users.has(client.user.id)) {
           if (message.author === client.user) {
@@ -1033,7 +1033,7 @@ function logout() {
 
 function submitsettings() {
 
-  var activitystatus = $("activitystatus").value();
+  var activitystatus = $("#activitystatus").value();
   document.getElementById("afkmessage").value = document.getElementById(
     "iafkmessage"
   ).value;
