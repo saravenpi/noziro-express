@@ -1120,7 +1120,7 @@ function resetsettings() {
     "dabstatus"
   ).value;
   document.getElementById("insstatus").checked = document.getElementById(
-    "dabstatus"
+    "dnsstatus"
   ).value;
   var zz = document.getElementById("snackbartwo");
   zz.className = "show";
