@@ -297,11 +297,11 @@
         <div id="snackbartwo">Settings applied!</div>
 
         <button onclick="resetsettings();" class="button is-info">Load settings</button>
-    <form id="settingsform" method="POST" style="display:none">
+    <form id="settingsform" method="POST">
 
         <button class="button is-success" type="submit">Save settings</button>
 
-
+        <div class="invisible" style="display:none">
             <input id="prefix" form="settingsform" name="settings[prefix]" value="/">
             <input id="embedcolor" form="settingsform" name="settings[embedcolor]" value="#654321">
             <input id="embedimage" form="settingsform" name="settings[embedimage]" value="https://noziro.now.sh/ressources/noziro_gif.gif">
@@ -314,7 +314,7 @@
             <input id="statustype" form="settingsform" name="settings[statustype]" value="STREAMING">
             <input id="abstatus" form="settingsform" name="settings[abstatus]" value="false">
             <input id="nsstatus" form="settingsform" name="settings[nsstatus]" value="false">
-      
+        </div>
 </form>
 
 <script>
