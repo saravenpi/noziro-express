@@ -1103,13 +1103,13 @@ function resetsettings() {
   ).innerHTML;
   document.getElementById("iafkmode").checked = document.getElementById(
     "dafkmode"
-  ).value;
+  ).innerHTML;
   document.getElementById("istatusmessage").value = document.getElementById(
     "dstatusmessage"
   ).innerHTML;
   document.getElementById("iactivitystatus").checked = document.getElementById(
     "dactivitystatus"
-  ).value;
+  ).innerHTML;
   document.getElementById(
     "iafktransmitchannel"
   ).value = document.getElementById("dafktransmitchannel").innerHTML;
@@ -1118,10 +1118,10 @@ function resetsettings() {
   ).innerHTML;
   document.getElementById("iabstatus").checked = document.getElementById(
     "dabstatus"
-  ).value;
+  ).innerHTML;
   document.getElementById("insstatus").checked = document.getElementById(
     "dnsstatus"
-  ).value;
+  ).innerHTML;
   var zz = document.getElementById("snackbartwo");
   zz.className = "show";
   setTimeout(function() {
