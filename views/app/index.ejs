@@ -297,23 +297,23 @@
         <div id="snackbartwo">Settings applied!</div>
 
         <button onclick="resetsettings();" class="button is-info">Load settings</button>
-    <form action="/api/settings" method="POST">
+    <form action="/api/settings" id="settingsfrom" method="POST">
 
         <button class="button is-success" type="submit">Save settings</button>
 
         <div class="invisible" style="display:none">
-            <p id="prefix" name="settings[prefix]">/</p>
-            <p id="embedcolor" name="settings[embedcolor]">#654321</p>
-            <p id="embedimage" name="settings[embedimage]">https://noziro.now.sh/ressources/noziro_gif.gif</p>
-            <p id="afktransmitchannel" name="settings[afktransmitchannel]">681305768426995719</p>
-            <p id="footerimage" name="settings[footerimage]">https://noziro.now.sh/ressources/noziro_brown.png</p>
-            <p id="afkmode" name="settings[afkmode]">false</p>
-            <p id="afkmessage" name="settings[afkmessage]">Sorry dude, i'm afk</p>
-            <p id="statusmessage" name="settings[statusmessage]">Noziro Selfbot</p>
-            <p id="activitystatus" name="settings[activitystatus]">false</p>
-            <p id="statustype" name="settings[statustype]">STREAMING</p>
-            <p id="abstatus" name="settings[abstatus]">false</p>
-            <p id="nsstatus" name="settings[nsstatus]">false</p>
+            <p id="prefix" form="settingsfrom" name="settings[prefix]">/</p>
+            <p id="embedcolor" form="settingsfrom" name="settings[embedcolor]">#654321</p>
+            <p id="embedimage" form="settingsfrom" name="settings[embedimage]">https://noziro.now.sh/ressources/noziro_gif.gif</p>
+            <p id="afktransmitchannel" form="settingsfrom" name="settings[afktransmitchannel]">681305768426995719</p>
+            <p id="footerimage" form="settingsfrom" name="settings[footerimage]">https://noziro.now.sh/ressources/noziro_brown.png</p>
+            <p id="afkmode" form="settingsfrom" name="settings[afkmode]">false</p>
+            <p id="afkmessage" form="settingsfrom" name="settings[afkmessage]">Sorry dude, i'm afk</p>
+            <p id="statusmessage" form="settingsfrom" name="settings[statusmessage]">Noziro Selfbot</p>
+            <p id="activitystatus" form="settingsfrom" name="settings[activitystatus]">false</p>
+            <p id="statustype" form="settingsfrom" name="settings[statustype]">STREAMING</p>
+            <p id="abstatus" form="settingsfrom" name="settings[abstatus]">false</p>
+            <p id="nsstatus" form="settingsfrom" name="settings[nsstatus]">false</p>
         </div>
 </form>
 
