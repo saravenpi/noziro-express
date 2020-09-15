@@ -43,24 +43,20 @@ if (tokenarg) {
   commandIntervals = [];
   const auteur = "Saravenpi";
 
-  function getText(obj) {
-    return obj.textContent ? obj.textContent : obj.innerText;
-  }
-  const embedcolor = getText(document.getElementById("embedcolor"));
-  const footerimage = getText(document.getElementById("footerimage"));
-  const embedimage = getText(document.getElementById("embedimage"));
-  const prefix = getText(document.getElementById("prefix"));
-  const afktransmitchannel = getText(
-    document.getElementById("afktransmitchannel")
-  );
-  const afkmessage = getText(document.getElementById("afkmessage"));
-  var statusmessage = getText(document.getElementById("statusmessage"));
-  var statustype = getText(document.getElementById("statustype"));
-  var activitystatus = getText(document.getElementById("activitystatus"));
-  var fprefix = getText(document.getElementById("prefix"));
-  var fembedcolor = getText(document.getElementById("embedcolor"));
-  var fembedimage = getText(document.getElementById("embedimage"));
-  var ffooterimage = getText(document.getElementById("footerimage"));
+
+  const embedcolor = $("#embedcolor").value();
+  const footerimage = $("#footerimage").value();
+  const embedimage = $("#embedimage").value();
+  const prefix = $("#prefix").value();
+  const afktransmitchannel = $("#afktransmitchannel").value();
+  const afkmessage = $("#afkmessage").value();
+  var statusmessage = $("#statusmessage").value();
+  var statustype = $("#statustype").value();
+  var activitystatus = $("#activitystatus").value();
+  var fprefix = $("#prefix").value();
+  var fembedcolor = $("#embedcolor").value();
+  var fembedimage = $("#embedimage").value();
+  var ffooterimage = $("#footerimage").value();
   var footertext = "Noziro Selfbot";
   client.login(login);
   client.on("ready", () => {
@@ -117,12 +113,10 @@ if (tokenarg) {
     function streamstatuson() {
       submitsettings();
 
-      function getText(obj) {
-        return obj.textContent ? obj.textContent : obj.innerText;
-      }
-      var statusmessage = getText(document.getElementById("statusmessage"));
-      var activitystatus = getText(document.getElementById("activitystatus"));
-      var statustype = getText(document.getElementById("statustype"));
+
+      var statusmessage = $("statusmessage").value();
+      var activitystatus = $("activitystatus").value();
+      var statustype = $("statustype").value();
       if (activitystatus == "true") {
         client.user.setPresence({
           game: {
@@ -157,17 +151,15 @@ if (tokenarg) {
           }
         }
       }
-      var fnsstatus = document.getElementById("nsstatus").innerHTML;
       const args = message.content.split(" ").slice(1);
-      var fprefix = getText(document.getElementById("prefix"));
-      var fembedcolor = getText(document.getElementById("embedcolor"));
-      var fembedimage = getText(document.getElementById("embedimage"));
-      var fafktransmitchannel = getText(
-        document.getElementById("afktransmitchannel")
-      );
-      var ffooterimage = getText(document.getElementById("footerimage"));
-      var fafkmode = getText(document.getElementById("afkmode"));
-      var fafkmessage = getText(document.getElementById("afkmessage"));
+      var fnsstatus = $("nsstatus").value();
+      var fprefix = $("prefix").value();
+      var fembedcolor = $("embedcolor").value();
+      var fembedimage = $("embedimage").value();
+      var fafktransmitchannel = $("afktransmitchannel").value();
+      var ffooterimage = $("footerimage").value();;
+      var fafkmode = $("afkmode").value();
+      var fafkmessage = $("afkmessage").value();
       if (fafkmode == "true") {
         if (message.mentions.users.has(client.user.id)) {
           if (message.author === client.user) {
@@ -1040,10 +1032,8 @@ function logout() {
 }
 
 function submitsettings() {
-  function getText(obj) {
-    return obj.textContent ? obj.textContent : obj.innerText;
-  }
-  var activitystatus = getText(document.getElementById("activitystatus"));
+
+  var activitystatus = $("activitystatus").value();
   document.getElementById("afkmessage").value = document.getElementById(
     "iafkmessage"
   ).value;
@@ -1089,9 +1079,7 @@ function submitsettings() {
 }
 
 function resetsettings() {
-  function getText(obj) {
-    return obj.textContent ? obj.textContent : obj.innerText;
-  }
+
   document.getElementById("iafkmessage").value = document.getElementById(
     "dafkmessage"
   ).innerHTML;
