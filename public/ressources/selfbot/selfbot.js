@@ -1044,46 +1044,46 @@ function submitsettings() {
     return obj.textContent ? obj.textContent : obj.innerText;
   }
   var activitystatus = getText(document.getElementById("activitystatus"));
-  document.getElementById("afkmessage").innerHTML = document.getElementById(
+  document.getElementById("afkmessage").value = document.getElementById(
     "iafkmessage"
   ).value;
-  document.getElementById("embedcolor").innerHTML = document.getElementById(
+  document.getElementById("embedcolor").value = document.getElementById(
     "iembedcolor"
   ).value;
-  document.getElementById("embedimage").innerHTML = document.getElementById(
+  document.getElementById("embedimage").value = document.getElementById(
     "iembedimage"
   ).value;
   document.getElementById("prembedimage").src = document.getElementById(
     "iembedimage"
   ).value;
-  document.getElementById("footerimage").innerHTML = document.getElementById(
+  document.getElementById("footerimage").value = document.getElementById(
     "ifooterimage"
   ).value;
   document.getElementById("prfooterimage").src = document.getElementById(
     "ifooterimage"
   ).value;
-  document.getElementById("prefix").innerHTML = document.querySelector(
+  document.getElementById("prefix").value = document.querySelector(
     "#iprefix"
   ).value;
-  document.getElementById("afkmode").innerHTML = document.getElementById(
+  document.getElementById("afkmode").value = document.getElementById(
     "iafkmode"
   ).checked;
-  document.getElementById("statusmessage").innerHTML = document.getElementById(
+  document.getElementById("statusmessage").value = document.getElementById(
     "istatusmessage"
   ).value;
-  document.getElementById("activitystatus").innerHTML = document.getElementById(
+  document.getElementById("activitystatus").value = document.getElementById(
     "iactivitystatus"
   ).checked;
   document.getElementById(
     "afktransmitchannel"
   ).innerHTML = document.getElementById("iafktransmitchannel").value;
-  document.getElementById("statustype").innerHTML = document.querySelector(
+  document.getElementById("statustype").value = document.querySelector(
     "#istatustype"
   ).value;
-  document.getElementById("abstatus").innerHTML = document.getElementById(
+  document.getElementById("abstatus").value = document.getElementById(
     "iabstatus"
   ).checked;
-  document.getElementById("nsstatus").innerHTML = document.getElementById(
+  document.getElementById("nsstatus").value = document.getElementById(
     "insstatus"
   ).checked;
 }
