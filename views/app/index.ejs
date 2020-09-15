@@ -321,10 +321,12 @@
 <script>
 $('#settingsform').submit(function(e){
     e.preventDefault();
+    var obj = $('#settingsform').serializeJSON();
+    var jsonString = JSON.stringify(obj);
     $.ajax({
         url: '/api/settings',
         type: 'post',
-        data: $('#settingsform').serializeObject(),
+        data: jsonString,
         success:function(){
             // Whatever you want to do after the form is successfully submitted
         }
