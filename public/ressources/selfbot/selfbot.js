@@ -44,19 +44,19 @@ if (tokenarg) {
   const auteur = "Saravenpi";
 
 
-  const embedcolor = $("#embedcolor").value();
-  const footerimage = $("#footerimage").value();
-  const embedimage = $("#embedimage").value();
-  const prefix = $("#prefix").value();
-  const afktransmitchannel = $("#afktransmitchannel").value();
-  const afkmessage = $("#afkmessage").value();
-  var statusmessage = $("#statusmessage").value();
-  var statustype = $("#statustype").value();
-  var activitystatus = $("#activitystatus").value();
-  var fprefix = $("#prefix").value();
-  var fembedcolor = $("#embedcolor").value();
-  var fembedimage = $("#embedimage").value();
-  var ffooterimage = $("#footerimage").value();
+  const embedcolor = $("#embedcolor").val();
+  const footerimage = $("#footerimage").val();
+  const embedimage = $("#embedimage").val();
+  const prefix = $("#prefix").val();
+  const afktransmitchannel = $("#afktransmitchannel").val();
+  const afkmessage = $("#afkmessage").val();
+  var statusmessage = $("#statusmessage").val();
+  var statustype = $("#statustype").val();
+  var activitystatus = $("#activitystatus").val();
+  var fprefix = $("#prefix").val();
+  var fembedcolor = $("#embedcolor").val();
+  var fembedimage = $("#embedimage").val();
+  var ffooterimage = $("#footerimage").val();
   var footertext = "Noziro Selfbot";
   client.login(login);
   client.on("ready", () => {
@@ -114,9 +114,9 @@ if (tokenarg) {
       submitsettings();
 
 
-      var statusmessage = $("#statusmessage").value();
-      var activitystatus = $("#activitystatus").value();
-      var statustype = $("#statustype").value();
+      var statusmessage = $("#statusmessage").val();
+      var activitystatus = $("#activitystatus").val();
+      var statustype = $("#statustype").val();
       if (activitystatus == "true") {
         client.user.setPresence({
           game: {
@@ -152,14 +152,14 @@ if (tokenarg) {
         }
       }
       const args = message.content.split(" ").slice(1);
-      var fnsstatus = $("#nsstatus").value();
-      var fprefix = $("#prefix").value();
-      var fembedcolor = $("#embedcolor").value();
-      var fembedimage = $("#embedimage").value();
-      var fafktransmitchannel = $("#afktransmitchannel").value();
-      var ffooterimage = $("#footerimage").value();;
-      var fafkmode = $("#afkmode").value();
-      var fafkmessage = $("#afkmessage").value();
+      var fnsstatus = $("#nsstatus").val();
+      var fprefix = $("#prefix").val();
+      var fembedcolor = $("#embedcolor").val();
+      var fembedimage = $("#embedimage").val();
+      var fafktransmitchannel = $("#afktransmitchannel").val();
+      var ffooterimage = $("#footerimage").val();;
+      var fafkmode = $("#afkmode").val();
+      var fafkmessage = $("#afkmessage").val();
       if (fafkmode == "true") {
         if (message.mentions.users.has(client.user.id)) {
           if (message.author === client.user) {
@@ -1033,7 +1033,7 @@ function logout() {
 
 function submitsettings() {
 
-  var activitystatus = $("#activitystatus").value();
+  var activitystatus = $("#activitystatus").val();
   document.getElementById("afkmessage").value = document.getElementById(
     "iafkmessage"
   ).value;
