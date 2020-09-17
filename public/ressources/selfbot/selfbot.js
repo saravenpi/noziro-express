@@ -467,8 +467,8 @@ if (tokenarg) {
 
           message.guild.channels.forEach(channel => {
             if(channel.type === "category") return;
-            if(!categories.has(channel.parent.name)) return categories.set(channel.parent.name, [channel.name]);
-            if(categories.has(channel.parent.name)) {
+            if(!categories.has(channel.parent)) return categories.set(channel.parent.name, [channel.name]);
+            if(categories.has(channel.parent)) {
               categories.get(channel.parent.name).push(channel.name);
             }
           });
