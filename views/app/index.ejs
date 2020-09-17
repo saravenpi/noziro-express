@@ -1,8 +1,5 @@
-
 <html>
   <head>
-
-
           <script src="https://kit.fontawesome.com/9df66f7bcf.js" crossorigin="anonymous"></script>
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
           <script src="https://cdn.jsdelivr.net/npm/vue"></script>
@@ -17,9 +14,6 @@
     <title>Noziro App</title>
   </head>
   <body>
-
-
-
     <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
      <div class="navbar-item">
@@ -27,17 +21,13 @@
      <i class="fas fa-arrow-left"></i>
     </a>
     </div>
-
     <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
     </a>
   </div>
-
   <div id="navbarBasicExample" class="navbar-menu">
-
-
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
@@ -46,11 +36,8 @@
           </a>
            <a id="guildsexplorer" class="button">
                  <i class="far fa-compass"></i>
-
           </a>-->
-
           <button onclick="window.location='/logout'" class="button is-danger">Logout</button>
-
         </div>
       </div>
     </div>
@@ -58,39 +45,29 @@
 </nav>
      </br>
   </br>
-
     <main>
     <br>
-<div class="notification">
+<div class="notification" style="padding: 1.25rem 1.5rem 1.25rem 1.5rem;">
     <div class="container">
-
     <div class="card">
-
   <div class="card-content">
     <div class="media">
       <div class="media-left">
         <figure class="image is-48x48">
-          <img class="is-rounded" src="https://cdn.discordapp.com/avatars/<%=  user.userid %>/<%=  user.avatar %>.png?size=128" alt="Placeholder image">
+          <img class="is-rounded" src="https://cdn.discordapp.com/avatars/<%=  user.userid %>/<%=  user.avatar %>.gif?size=128" onerror="this.src = 'https://cdn.discordapp.com/avatars/<%= user.userid %>/<%= user.avatar %>.png?size=128';" alt="Placeholder image">
         </figure>
       </div>
       <div class="media-content">
         <p class="title is-4"><%=  user.username %></p>
         <p class="subtitle is-6"><%=  user.bio %></p>
       </div>
-
        <div class="buttons media-right">
          <button id="settings" class="button"><i class="fas fa-sliders-h"></i></button>
-
      </div>
     </div>
-
-
-
   </div>
 </div>
-
     </div>
-
   </div>
     <br>
      <div class="container is-fullhd">
@@ -110,54 +87,37 @@
              <p class="title is-4" id="historyusername"></p>
              <p class="subtitle is-6" id="historytoken"></p>
            </div>
-
             <div class="buttons media-right">
               <button id="startfromhistory" class="button"><i class="far fa-play-circle"></i> Start</button>
-
           </div>
          </div>
-
-
 </div>
        </div>
 </div>
        <br></br>
-
-
        <script type="text/javascript">
          $("#startfromhistory").click(function() {
            selfbotapp(tokenlocal);
          })
        </script>
-
-
-
             <div class="container has-text-centered tokenlogin">
-
                 <h1 class="title">
                     Token login
                 </h1>
-
                 <br>
                 </br>
                 <div class="field">
                     <div class="control">
-
-
-
                         <div class="control has-icons-left">
                             <input class="input is-primary is-inverted is-rounded" type="text" placeholder="Enter your token" style="color: hsl(0, 0%, 65%)" id="token" value="">
                             <script type="text/javascript">
                               if (localStorage.getItem("token")) {
                                 var tokenlocal = localStorage.getItem("token")
-
                                 $('#historyusername').html(localStorage.getItem("username"));
                                 $('#historytoken').html(localStorage.getItem("token"));
                                 $("#history").fadeIn();
                                 $("tokenlogin").fadeIn();
-
                             } else {
-
                               $('#token').val("");
                               $("#history").fadeOut();
                              }
@@ -167,9 +127,7 @@
                             </span>
                         </div>
                         <br><br />
-
                         <span class="is-centered">
-
                             <button class="button is-primary is-inverted is-centered" onclick="selfbotapp();" class="loginbtn">
                                 <span class="icon">
                                     <i class="far fa-play-circle"></i>
@@ -177,42 +135,31 @@
                                 <span>Start</span>
                             </button>
                         </span>
-
-
                     </div>
                 </div>
             </div>
-
-
-
     <div class="invisible" id="connected" style="display: none;">
         <button onclick="logout();" class="button is-danger">Stop Selfbot</button>
-
         <h1>
             <center>Connected as: <p id="username"></p>
             </center>
         </h1>
-
-
         <p>
             <h2>Control panel:</h2>
         </p>
         <div class="grid-container">
-
             <div class="grid-item">
                 Embed Image:<br><input type="text" id="iembedimage" value="<%= settings.embedimage %>">
                 <br>
                 <br>
                 <img id="prembedimage" class="grid-img" src="<%= settings.embedimage %>" width="100px">
             </div>
-
             <div class="grid-item">
                 Footer Image:<br><input type="text" id="ifooterimage" value="<%= settings.footerimage %>">
                 <br>
                 <br>
                 <img id="prfooterimage" class="grid-img" src="<%= settings.footerimage %>" width="100px">
             </div>
-
             <div class="grid-item">
                 Embed Color:<br><input id="iembedcolor" class="jscolor" value="<%= settings.embedcolor %>">
             </div>
@@ -229,7 +176,6 @@
                     <option value=";" class="option">;</option>
                     <option value="," class="option">,</option>
                     <option value=":" class="option">:</option>
-
                     <option value="_" class="option">_</option>
                     <option value="-" class="option">-</option>
                 </select>
@@ -247,16 +193,13 @@
             <div class="grid-item">
               Logs Channel's Id:<br><input type="text" id="iafktransmitchannel" value="<%= settings.afktransmitchannel %>">
             </div>
-
             <div class="grid-item">
                 Custom Status:
-
                 <br><label class="switch">
                     <input type="checkbox" id="iactivitystatus" checked="<%= settings.activitystatus %>">
                     <span class="slider round"></span>
                 </label>
             </div>
-
             <div class="grid-item">
                 Status Message:<br><select class="selectmenu" id="istatustype">
                     <option value="STREAMING" class="option">Streaming</option>
@@ -266,42 +209,27 @@
                 </select>
                 <input type="text" id="istatusmessage" value="<%= settings.statusmessage %>">
             </div>
-
-
-
             <div class="grid-item">
                 Bot DMs (AdBlock):
                 <br><label class="switch">
                     <input type="checkbox" id="iabstatus" checked="<%= settings.abstatus %>">
                     <span class="slider round"></span>
                 </label>
-
-
             </div>
-
             <div class="grid-item">
                 Nitro Sniper (autoclaimer):
                 <br><label class="switch">
                     <input type="checkbox" id="insstatus" checked="<%= settings.nsstatus %>">
                     <span class="slider round"></span>
                 </label>
-
-
             </div>
-
-
         </div>
-
         <br>
         <br>
-
         <div id="snackbartwo">Settings applied!</div>
-
         <button onclick="resetsettings();" class="button is-info">Reset settings</button>
     <form id="settingsform" method="POST">
-
         <button class="button is-success" type="submit">Save settings</button>
-
         <div class="invisible" style="display:none">
             <input id="prefix" form="settingsform" name="prefix" value="<%= settings.prefix %>">
             <input id="embedcolor" form="settingsform" name="embedcolor" value="<%= settings.embedcolor %>">
@@ -317,12 +245,10 @@
             <input id="nsstatus" form="settingsform" name="nsstatus" value="<%= settings.nsstatus %>">
         </div>
 </form>
-
 <script>
 $('#settingsform').submit(function(e){
     e.preventDefault();
     var obj = $('#settingsform').serializeJSON();
-
     $.ajax({
         url: '/api/settings',
         type: 'post',
@@ -332,9 +258,7 @@ $('#settingsform').submit(function(e){
         }
     });
 });
-
 </script>
-
     <br>
     </div>
     <div class="dank-ass-loader invisible centromax" id="loader" style="display:none">
@@ -371,11 +295,6 @@ $('#settingsform').submit(function(e){
             <div class="arrow down outer outer-9"></div>
         </div>
     </div>
-
-
-
-
-
     <div class="invisible" style="display:none">
         <p id="dprefix"><%= settings.prefix %></p>
         <p id="dembedcolor"><%= settings.embedcolor %></p>
@@ -391,18 +310,7 @@ $('#settingsform').submit(function(e){
         <p id="dnsstatus"><%= settings.nsstatus %></p>
         <p id="selfboton">false</p>
     </div>
-
-
-
-
-
-
-
     </div>
-
-
-
-
     <footer class="footer">
         <div class="content has-text-centered">
             <p>
@@ -415,9 +323,6 @@ $('#settingsform').submit(function(e){
         </div>
     </footer>
     </main>
-
-
 <%- include("/app/views/app/modals/index.ejs") %>
   </body>
-
 </html>
