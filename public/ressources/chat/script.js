@@ -45,10 +45,10 @@ $(function() {
   });
 
   var messagespart = $("#messages");
-  function messageemit(author, avatar, msg, id) {
+  function messageemit(author, avatar, msg, id, uuid) {
     var realauthor = document.getElementById("usernamevalue").innerHTML
 
-    if (author == realauthor) {
+    if (uuid == localStorage.getItem("uuid")) {
       messagespart.append(
         '<div id="' +
           id +
@@ -110,11 +110,11 @@ $(function() {
   });
 
   socket.on("loadhist", function(author, avatar, msg, id) {
-    messageemit(author, avatar, msg, id);
+    messageemit(author, avatar, msg, id, uuid);
   });
 
-  socket.on("message", function(author, avatar, msg, id) {
-    messageemit(author, avatar, msg, id);
+  socket.on("message", function(author, avatar, msg, id, uuid) {
+    messageemit(author, avatar, msg, id, uuid);
     var realauthor = document.getElementById("usernamevalue").innerHTML
     if (author != realauthor) beep();
 
