@@ -38,7 +38,7 @@ $(function() {
         .replace(/ /g, "").length < 1
     )
   return false;
-    socket.emit("message", $("#m").val(), localStorage.getItem("token"));
+    socket.emit("message", $("#m").val(), localStorage.getItem("uuid"));
     $('#m').val('');
   return false;
 
@@ -89,8 +89,8 @@ $(function() {
   }
 
 
-  socket.emit("add user", localStorage.getItem("token"));
-  //console.log("add user : " + localStorage.getItem("token"));
+  socket.emit("add user", localStorage.getItem("uuid"));
+  //console.log("add user : " + localStorage.getItem("uuid"));
 
   socket.on("user joined", function(username) {
     $("#memberlist").append(
