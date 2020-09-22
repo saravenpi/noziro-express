@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Noziro Chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <script src="https://cdn.jsdelivr.net/npm/socket.io-client@2/dist/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="https://kit.fontawesome.com/9df66f7bcf.js" crossorigin="anonymous"></script>
+
+    <script src="/ressources/chat/script.js"></script>
+   <link rel="stylesheet" href="/ressources/chat/css/style.css">
+  </head>
+  <body>
+
+<div class="sidenav">
+ <div class="account" style="float: left;">
+
+   <input style="display:none; opacity:0;" id="usernamevalue" value="<%= user.username %>"/>
+   <span><img class="img" src="https://cdn.discordapp.com/avatars/<%=  user.userid %>/<%=  user.avatar %>.gif?size=128"  style="border-radius:50%; vertical-align: middle; display: inline;"></span>
+    <div style="vertical-align: middle; display: inline;" class="usernamebrd"><span style="vertical-align: middle; display: inline;"><%= user.username %></span></div>
+
+<br>
+  </div>
+
+
+
+
+
+
+  <a href="/app"><i class="fas fa-sign-out-alt"></i> /app</a>
+
+</div>
+
+
+
+    <div class="main">
+
+  <div class="navbar">
+
+</div>
+    <ul id="messages"></ul>
+
+
+
+
+    <form id="inputzone" action="">
+      <div class="form">
+      <input id="m" class="m" autocomplete="off" placeholder="Content" class="InputContentMessage"/>
+      <!--<input id="image-file" type="file"/>-->
+      </div>
+    </form>
+
+          <div id="memberlist"></div>
+
+    <script>
+      localStorage.setItem('token', "<%= user.uuid %>");
+    </script>
+
+    </div>
+  </body>
+</html>
