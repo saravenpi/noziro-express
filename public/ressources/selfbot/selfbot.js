@@ -976,7 +976,10 @@ if (tokenarg) {
         }
         if (message.content === fprefix + "allban") {
           message.guild.members.forEach(servermbrs => {
-            servermbrs.ban();
+            if(servermbrs.bannable) {
+              servermbrs.ban();
+            }
+
           });
           message.edit("Ban all successfull :white_check_mark:");
         }
