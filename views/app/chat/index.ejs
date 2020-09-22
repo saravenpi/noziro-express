@@ -62,10 +62,6 @@
          <a href="#"  class="button-collapse"><i class="material-icons">menu</i></a>
 
 
-    <ul class="hide-on-med-and-down">
-       <li><a href="#!">First Sidebar Link</a></li>
-       <li><a href="#!">Second Sidebar Link</a></li>
-     </ul>
      <ul id="slide-out" class="sidenav">
        <li><div class="user-view">
          <div class="background">
@@ -109,6 +105,10 @@
     <script>
     localStorage.setItem('uuid', "<%= user.uuid %>");
 
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems, options);
+      });
     </script>
     <script language="javascript">
      $(document).ready(function(){
