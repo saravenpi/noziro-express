@@ -12,6 +12,21 @@
           <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/3.1.0/jquery.serializejson.min.js"></script>
           <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <title>Noziro App</title>
+    <script>
+
+       $(document).ready(function() {
+
+     // Check for click events on the navbar burger icon
+     $(".navbar-burger").click(function() {
+
+         // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+         $(".navbar-burger").toggleClass("is-active");
+         $(".navbar-menu").toggleClass("is-active");
+
+     });
+   });
+   </script>
+
   </head>
   <body>
     <nav class="navbar" role="navigation" aria-label="main navigation">
