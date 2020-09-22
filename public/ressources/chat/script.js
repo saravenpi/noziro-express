@@ -111,7 +111,6 @@ $(function() {
 
   socket.on("loadhist", function(author, avatar, msg, id, uuid) {
     messageemit(author, avatar, msg, id, uuid);
-    console.log(uuid)
   });
 
   socket.on("message", function(author, avatar, msg, id, uuid) {
