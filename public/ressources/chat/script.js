@@ -109,7 +109,7 @@ $(function() {
     $(`#${username}`).remove();
   });
 
-  socket.on("loadhist", function(author, avatar, msg, id) {
+  socket.on("loadhist", function(author, avatar, msg, id, uuid) {
     messageemit(author, avatar, msg, id, uuid);
   });
 
