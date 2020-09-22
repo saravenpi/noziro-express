@@ -58,8 +58,8 @@
    <!-- Navigation Bar -->
 
    <div class="nav-wrapper">
-         <a href="#" class="brand-logo center">Wagba</a>
-         <a href="#"  class="button-collapse"><i class="material-icons">menu</i></a>
+         <a href="#" class="brand-logo center">Noziro Chat</a>
+         <a href="#"  class="button-collapse"><i class="fas fa-bars"></i> Menu</a>
 
 
      <ul id="slide-out" class="sidenav">
@@ -71,7 +71,7 @@
          <a ><span id="usernamevalue" class="white-text name"><%= user.username %></span></a>
        </div></li>
        <li><a href="/app"><i class="fas fa-sign-out-alt"></i> /app</a></li>
-         <li><a href="#"><i class="fas fa-sign-out-alt close-nav-yay"></i> Close SideNav</a></li>
+
        <!--<li><a href="#!">Second Link</a></li>
        <li><div class="divider"></div></li>
        <li><a class="subheader">Subheader</a></li>
@@ -100,7 +100,7 @@
       </div>
     </form>
 
-          <div id="memberlist"></div>
+          <div id="memberlist" style="display:none"></div>
 
     <script>
     localStorage.setItem('uuid', "<%= user.uuid %>");
@@ -115,9 +115,7 @@
     	   $('.button-collapse').click(function() {
            $('.sidenav').sidenav('open');
          });
-         $('.close-nav-yay').click(function() {
-           $('.sidenav').sidenav('close');
-         });
+
 
 
        });
