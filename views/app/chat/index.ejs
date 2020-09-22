@@ -91,16 +91,19 @@
           <div id="memberlist"></div>
 
     <script>
-
+    localStorage.setItem('uuid', "<%= user.uuid %>");
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems);
+      });
       $(document).ready(function(){
 
 
-        localStorage.setItem('uuid', "<%= user.uuid %>");
+
 
 
          $('.sidenav').sidenav();
-
-          $('.sidenav').open();
+         $('.sidenav').sidenav('open');
        });
 
     </script>
