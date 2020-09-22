@@ -94,7 +94,7 @@ $(function() {
 
   socket.on("user joined", function(username) {
     $("#memberlist").append(
-      "<span class='dot'></span><h2 style='vertical-align: middle; display: inline;' id=" + username + ">" + username.username + "</h2>"
+      "<span class='dot'></span><h4 style='vertical-align: middle; display: inline;' id=" + username + ">" + username.username + "</h4>"
     );
   });
   socket.on("deletemsg", function(id) {
