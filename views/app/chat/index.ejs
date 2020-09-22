@@ -9,6 +9,9 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
+   <!-- Compiled and minified JavaScript -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 
     <script src="/ressources/chat/script.js"></script>
    <link rel="stylesheet" href="/ressources/chat/css/style.css">
@@ -56,7 +59,7 @@
         <img src="https://materializecss.com/images/office.jpg">
       </div>
       <a ><img class="circle" src="<%=  user.avatar %>"></a>
-      <a ><span class="white-text name"><%= user.username %></span></a>
+      <a ><span id="usernamevalue" class="white-text name"><%= user.username %></span></a>
     </div></li>
     <li><a href="#!"><i class="fas fa-sign-out-alt"></i> /app</a></li>
     <!--<li><a href="#!">Second Link</a></li>
@@ -89,9 +92,16 @@
 
     <script>
 
+      $(document).ready(function(){
+
 
         localStorage.setItem('uuid', "<%= user.uuid %>");
 
+
+         $('.sidenav').sidenav();
+
+          $('.sidenav').open();
+       });
 
     </script>
 
