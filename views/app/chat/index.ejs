@@ -52,48 +52,41 @@
 
 </div>-->
 
-  <ul id="slide-out" class="sidenav">
-    <li><div class="user-view">
-      <div class="background">
-        <img src="https://materializecss.com/images/office.jpg">
-      </div>
-      <a ><img class="circle" src="<%=  user.avatar %>"></a>
-      <a ><span id="usernamevalue" class="white-text name"><%= user.username %></span></a>
-    </div></li>
-    <li><a href="/app"><i class="fas fa-sign-out-alt"></i> /app</a></li>
-      <li><a href="#"><i class="fas fa-sign-out-alt close-nav-yay"></i> Close SideNav</a></li>
-    <!--<li><a href="#!">Second Link</a></li>
-    <li><div class="divider"></div></li>
-    <li><a class="subheader">Subheader</a></li>
-    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>-->
-  </ul>
-  <!--<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>-->
 
   <nav>
 
    <!-- Navigation Bar -->
 
-<div class="nav-wrapper">
-      <a href="#" class="brand-logo center">Wagba</a>
-      <a href="#"  class="button-collapse"><i class="material-icons">menu</i></a>
+   <div class="nav-wrapper">
+         <a href="#" class="brand-logo center">Wagba</a>
+         <a href="#"  class="button-collapse"><i class="material-icons">menu</i></a>
 
 
+    <ul class="hide-on-med-and-down">
+       <li><a href="#!">First Sidebar Link</a></li>
+       <li><a href="#!">Second Sidebar Link</a></li>
+     </ul>
+     <ul id="slide-out" class="sidenav">
+       <li><div class="user-view">
+         <div class="background">
+           <img src="https://materializecss.com/images/office.jpg">
+         </div>
+         <a ><img class="circle" src="<%=  user.avatar %>"></a>
+         <a ><span id="usernamevalue" class="white-text name"><%= user.username %></span></a>
+       </div></li>
+       <li><a href="/app"><i class="fas fa-sign-out-alt"></i> /app</a></li>
+         <li><a href="#"><i class="fas fa-sign-out-alt close-nav-yay"></i> Close SideNav</a></li>
+       <!--<li><a href="#!">Second Link</a></li>
+       <li><div class="divider"></div></li>
+       <li><a class="subheader">Subheader</a></li>
+       <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>-->
+     </ul>
 
-
-  <ul id="slide-out" class="sidenav">
-    <li><div class="user-view">
-      <div class="background">
-        <img src="https://materializecss.com/images/office.jpg">
       </div>
-      <a ><img class="circle" src="<%=  user.avatar %>"></a>
-      <a ><span id="usernamevalue" class="white-text name"><%= user.username %></span></a>
-    </div></li>
-    <li><a href="/app"><i class="fas fa-sign-out-alt"></i> /app</a></li>
-    <!--<li><a href="#!">Second Link</a></li>
-    <li><div class="divider"></div></li>
-    <li><a class="subheader">Subheader</a></li>
-    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>-->
-  </ul>
+   </nav>
+
+
+
 
 </nav>
 
