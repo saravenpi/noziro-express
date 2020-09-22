@@ -7,6 +7,12 @@
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script src="https://kit.fontawesome.com/9df66f7bcf.js" crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+   <!-- Compiled and minified JavaScript -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
     <script src="/ressources/chat/script.js"></script>
    <link rel="stylesheet" href="/ressources/chat/css/style.css">
    <script>
@@ -27,7 +33,7 @@
   </head>
   <body>
 
-<div class="sidenav">
+<!--<div class="sidenav">
  <div class="account" style="float: left;">
 
    <input style="display:none; opacity:0;" id="usernamevalue" value="<%= user.username %>"/>
@@ -44,7 +50,24 @@
 
   <a href="/app"><i class="fas fa-sign-out-alt"></i> /app</a>
 
-</div>
+</div>-->
+<nav> <!-- navbar content here  --> </nav>
+
+  <ul id="slide-out" class="sidenav">
+    <li><div class="user-view">
+      <div class="background">
+        <img src="https://materializecss.com/images/office.jpg">
+      </div>
+      <a ><img class="circle" src="<%=  user.avatar %>"></a>
+      <a ><span class="white-text name"><%= user.username %></span></a>
+    </div></li>
+    <li><a href="#!"><i class="fas fa-sign-out-alt"></i> /app</a></li>
+    <!--<li><a href="#!">Second Link</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Subheader</a></li>
+    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>-->
+  </ul>
+  <!--<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>-->
 
 
 
@@ -69,6 +92,8 @@
 
     <script>
       localStorage.setItem('uuid', "<%= user.uuid %>");
+
+      $('.sidenav').sidenav();
     </script>
 
     </div>
