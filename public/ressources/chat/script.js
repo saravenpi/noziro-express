@@ -45,7 +45,7 @@ $(function() {
   });
 
   var messagespart = $("#messages");
-  function messageemit(author, avatar, msg, id, uuid) {
+  function messageemit(author, avatar, msg, id) {
     var realauthor = document.getElementById("usernamevalue").innerHTML
 
     if (avatar == $("#sonavatar").attr('src');) {
@@ -109,12 +109,12 @@ $(function() {
     $(`#${username}`).remove();
   });
 
-  socket.on("loadhist", function(author, avatar, msg, id, uuid) {
-    messageemit(author, avatar, msg, id, uuid);
+  socket.on("loadhist", function(author, avatar, msg, id) {
+    messageemit(author, avatar, msg, id);
   });
 
-  socket.on("message", function(author, avatar, msg, id, uuid) {
-    messageemit(author, avatar, msg, id, uuid);
+  socket.on("message", function(author, avatar, msg, id) {
+    messageemit(author, avatar, msg, id);
     var realauthor = document.getElementById("usernamevalue").innerHTML
     if (author != realauthor) beep();
 
