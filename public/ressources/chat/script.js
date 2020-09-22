@@ -48,7 +48,7 @@ $(function() {
   function messageemit(author, avatar, msg, id) {
     var realauthor = document.getElementById("usernamevalue").innerHTML
 
-    if (avatar == $("#sonavatar").attr('src');) {
+    if (avatar == $("#sonavatar").attr('src')) {
       messagespart.append(
         '<div id="' +
           id +
