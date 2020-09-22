@@ -52,7 +52,7 @@
     <div class="media">
       <div class="media-left">
         <figure class="image is-48x48">
-          <img class="is-rounded" src="https://cdn.discordapp.com/avatars/<%=  user.userid %>/<%=  user.avatar %>.gif?size=128" onerror="this.src = 'https://cdn.discordapp.com/avatars/<%= user.userid %>/<%= user.avatar %>.png?size=128';" alt="Placeholder image">
+          <img class="is-rounded" src="<%=  user.avatar %>" onerror="this.src = '<%=  user.avatar %>';" alt="Placeholder image">
         </figure>
       </div>
       <div class="media-content">
@@ -76,11 +76,7 @@
   <div class="card tokenlogin" >
        <div class="card-content">
          <div class="media">
-          <!-- <div class="media-left">
-             <figure class="image is-48x48">
-               <img class="is-rounded" src="https://cdn.discordapp.com/avatars/<%=  user.userid %>/<%= user.avatar %>.png?size=128" alt="Placeholder image">
-             </figure>
-           </div>-->
+
            <div class="media-content">
              <p class="title is-4" id="historyusername"></p>
              <p class="subtitle is-6" id="historytoken"></p>
