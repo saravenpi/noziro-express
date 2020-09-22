@@ -91,9 +91,16 @@
           <div id="memberlist"></div>
 
     <script>
-      localStorage.setItem('uuid', "<%= user.uuid %>");
 
-      $('.sidenav').sidenav();
+      $(document).ready(function(){
+
+
+        localStorage.setItem('uuid', "<%= user.uuid %>");
+
+        
+         $('.sidenav').sidenav();
+       });
+
     </script>
 
     </div>
