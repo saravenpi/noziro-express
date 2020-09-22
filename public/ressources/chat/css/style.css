@@ -90,11 +90,6 @@ body {
 }
 
 
-
-.usernamebrd {
-  font-size: 25px;
-  color: #7289DA;
-}
 /*
 .sidenav .account {
   padding:10px;
@@ -137,10 +132,7 @@ body {
   overflow-x: hidden;
   padding-top: 20px;
 }
-#memberlist h2 {
-  margin-left:5%;
-  list-style-type: none;
-}
+
 
 .img {
   object-fit: cover;
