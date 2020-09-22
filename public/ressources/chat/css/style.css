@@ -10,7 +10,7 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
-
+/*
 .sidenav {
   height: 100%;
   width: 15%;
@@ -34,7 +34,7 @@ body {
 .sidenav a:hover {
   color: #f1f1f1;
 }
-
+*/
 .main {
   margin-left: 15%; /* Same as the width of the sidenav */
   width: 80%;
@@ -49,26 +49,26 @@ body {
 .form {
   position: fixed;
   bottom: 0;
- 
+
   width: 100%;
-  
+
 }
 
 .form #m {
- 
+
   border-width: 2px;
   padding: 0.8%;
   width: 70%;
   border-color: black;
-  
+
 }
 .form #image-file {
- 
+
   border-width: 2px;
-  
+
   width: 30%;
   border-color: black;
-  
+
 }
 
 
@@ -99,7 +99,7 @@ body {
   font-size: 25px;
   color: #7289DA;
 }
-
+/*
 .sidenav .account {
   padding:10px;
   margin-left: 15px;
@@ -116,20 +116,20 @@ body {
 .content {
   color: white;
   font-size: 25px;
-}
+}*/
 
 #InputContentMessage {
   width: 80%;
-  vertical-align: middle; 
+  vertical-align: middle;
   display: inline;
 }
 #InputFileMessage {
   border: none;
   width: 20%;
-  vertical-align: middle; 
+  vertical-align: middle;
   display: inline;
 }
-
+/*
 #memberlist  {
   height: 100%;
   width: 13%;
@@ -141,11 +141,13 @@ body {
   overflow-x: hidden;
   padding-top: 20px;
 }
+
+
 #memberlist h2 {
   margin-left:5%;
   list-style-type: none;
 }
-
+*/
 .img {
   object-fit: cover;
   width:30px;
@@ -159,7 +161,7 @@ body {
 }
 
 .dltbtn {
-  vertical-align: middle; 
+  vertical-align: middle;
   display: inline;
   text-decoration: none;
   background-color: #af2142;
@@ -170,11 +172,10 @@ body {
 
 .dot {
   margin-left: 5px;
-  vertical-align: middle; 
+  vertical-align: middle;
   display: inline-block;
   height: 12px;
   width: 12px;
   background-color: green;
   border-radius: 50%;
   }
-
