@@ -50,34 +50,22 @@ $(function() {
 
     if (avatar == $("#sonavatar").attr('src')) {
       messagespart.append(
-        '<div id="' +
-          id +
-          '"><span> <img class="msgimg" src="' +
-          avatar +
-          '"  style="border-radius:50%; vertical-align: middle; display: inline;"></span>' +
-          "      <div style='vertical-align: middle; display: inline;' class='username'>" +
-          author +
-          ":</div>" +
-          '<span><form style="vertical-align: middle; display: inline;" action="/deletemsg" method="POST">' +
-          '<input style="display: none; opacity:0;" type="text"  name="message[id]"  value="' +
-          id +
-          '">' +
-          '<button class="dltbtn" type="submit" id="buttton"><i class="fas fa-trash-alt"></i></button></form></span>' +
-          "<div class='content'>" +
-          msg +
-          "</div></div>"
+        `<div id="${id}"><span> <img class="msgimg" src="${avatar}"  style="border-radius:50%; vertical-align: middle; display: inline;"></span>
+        <div style='vertical-align: middle; display: inline;' class='username'>
+          ${author}: </div>
+          <span><form style="vertical-align: middle; display: inline;" action="/deletemsg" method="POST">
+          <input style="display: none; opacity:0;" type="text"  name="message[id]"  value="${id}">
+          <button class="dltbtn" type="submit" id="buttton"><i class="fas fa-trash-alt"></i></button></form></span>
+          <div class='content'>${msg}</div></div>`
       );
     } else {
       messagespart.append(
-        '<span> <img class="msgimg" src="' +
-          avatar +
-          '"  style="border-radius:50%; vertical-align: middle; display: inline;"></span>' +
-          "      <div style='vertical-align: middle; display: inline;' class='username'>" +
-          author +
-          ":</div>" +
-          "<div class='content'>" +
-          msg +
-          "</div></div>"
+        `<span> <img class="msgimg" src="${avatar}" style="border-radius:50%; vertical-align: middle; display: inline;"></span>
+        <div style='vertical-align: middle; display: inline;' class='username'>
+          ${author}: </div>
+          <div class='content'>
+          ${msg}
+          </div></div>`
       );
     }
 
@@ -94,7 +82,7 @@ $(function() {
 
   socket.on("user joined", function(username) {
     $("#memberlist").append(
-      "<span class='dot'></span><h4 style='vertical-align: middle; display: inline;' id=" + username + ">" + username.username + "</h4>"
+      `<span class='dot'></span><h4 style='vertical-align: middle; display: inline;' id=${username}>${username.username}</h4>`
     );
   });
   socket.on("deletemsg", function(id) {
